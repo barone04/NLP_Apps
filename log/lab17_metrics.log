@@ -1,0 +1,9 @@
+--- Performance Metrics ---
+Pipeline fitting duration: 4.87 seconds
+Data transformation duration: 1.96 seconds
+Actual vocabulary size (after preprocessing): 31355 unique terms
+HashingTF numFeatures set to: 20000
+Note: numFeatures (20000) is smaller than actual vocabulary size (31355). Hash collisions are expected.
+Metrics file generated at: /home/tbao04/Pycharm/NLP&Apps/spark_labs/../log/lab17_metrics.log
+
+For detailed stage-level metrics, view the Spark UI at http://localhost:4040 during execution.
