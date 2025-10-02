@@ -5,7 +5,7 @@ ThisBuild / scalaVersion := "2.12.18" // Spark 3.5 is compatible with Scala 2.12
 lazy val root = (project in file("."))
   .settings(
     name := "spark-nlp-labs",
-    // Enable forking a new JVM for 'run' and 'test' tasks
+    // Enable forking a new JVM for 'run' and 'test' tasks.
     // This is necessary to pass JVM options for Spark on Java 9+
     fork := true,
     // Add JVM options to allow Spark to access internal Java APIs

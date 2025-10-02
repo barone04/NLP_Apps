@@ -125,7 +125,7 @@ Quy trình triển khai được thực hiện như sau:
 
 ---
 
-# Update Request
+# --- Update Request ---
 
 Dưới đây là các cập nhật đã thực hiện cho mã nguồn Lab17_NLPPipeline.scala dựa trên các yêu cầu được đề xuất:
 
@@ -154,8 +154,8 @@ Kết quả được sắp xếp theo thứ tự giảm dần của độ tươn
 
 
 - Kết quả:
-![Query Document](image/query_doc.png)
-![Result Documents](image/result_docs.png)
+![Query Document](image/query_document.png)
+![Result Documents](image/result_documents.png)
 
 
 ### Kết luận
