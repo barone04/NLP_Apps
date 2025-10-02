@@ -154,8 +154,8 @@ Kết quả được sắp xếp theo thứ tự giảm dần của độ tươn
 
 
 - Kết quả:
-![Query Document](image/query_doc.png)
-![Result Documents](image/result_docs.png)
+![Query Document](../image/query_doc.png)
+![Result Documents](../image/result_docs.png)
 
 
 ### Kết luận
