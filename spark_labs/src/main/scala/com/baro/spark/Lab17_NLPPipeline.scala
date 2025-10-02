@@ -11,7 +11,7 @@ object Lab17_NLPPipeline {
 
   def main(args: Array[String]): Unit = {
 
-    // Khởi tạo Spark Session.
+    // Khởi tạo Spark Session
     val spark = SparkSession.builder
       .appName("NLP Pipeline Example")
       .master("local[*]")
