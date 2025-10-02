@@ -1,4 +1,4 @@
----- Performance Metrics ----
+--- Performance Metrics ---
 1. Data Reading Duration: 8.78 seconds
 2. Pipeline Fitting (Training) Duration: 2.36 seconds
 3. Data Transformation (Processing) Duration: 1.48 seconds

@@ -1,4 +1,4 @@
---- NLP Pipeline Output (First 20 results - Normalized TF-IDF) ---
+---- NLP Pipeline Output (First 20 results - Normalized TF-IDF) ----
 ================================================================================
 Original Text: Beginners BBQ Class Taking Place in Missoula!
 Do you want to get better at making delicious BBQ? You...
