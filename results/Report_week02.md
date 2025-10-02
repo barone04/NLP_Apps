@@ -124,3 +124,41 @@ Quy trình triển khai được thực hiện như sau:
 * Chỉ dùng các công cụ xử lý NLP cơ bản của Spark (RegexTokenizer, StopWordsRemover, HashingTF, IDF).
 
 ---
+
+# Update Request
+
+Dưới đây là các cập nhật đã thực hiện cho mã nguồn Lab17_NLPPipeline.scala dựa trên các yêu cầu được đề xuất:
+
+1. Tùy chỉnh giới hạn tài liệu
+- Mô tả: Thêm biến limitDocuments để dễ dàng thay đổi số lượng tài liệu được xử lý thay vì sử dụng giá trị cố định.
+- Thực hiện: Biến limitDocuments đã được khai báo và sử dụng trong lệnh limit(limitDocuments) khi đọc dữ liệu từ tệp JSON. Điều này cho phép người dùng điều chỉnh số tài liệu xử lý bằng cách thay đổi giá trị của biến này.
+
+2. Đo lường hiệu suất chi tiết
+- Mô tả: Thêm mã để đo và in thời gian thực thi cho từng giai đoạn chính như đọc/ghi dữ liệu, huấn luyện pipeline, và xử lý dữ liệu.
+- Thực hiện:
+* Thời gian đọc dữ liệu được đo bằng System.nanoTime() từ khi bắt đầu đọc đến khi hoàn thành initialDF.count().
+* Thời gian huấn luyện pipeline được đo trong quá trình gọi pipeline.fit(initialDF).
+* Thời gian xử lý dữ liệu được đo trong quá trình gọi pipelineModel.transform(initialDF).
+* Kết quả thời gian được in ra dưới dạng giây với độ chính xác hai chữ số thập phân.
+
+3. Chuẩn hóa vector
+- Mô tả: Thêm lớp Normalizer vào pipeline để chuẩn hóa vector đặc trưng TF-IDF.
+- Thực hiện: Lớp Normalizer đã được thêm vào pipeline với cột đầu vào là features (vector TF-IDF) và cột đầu ra là normFeatures. Chuẩn L2 (Euclidean norm) được sử dụng với tham số setP(2.0) để đảm bảo các vector có độ dài bằng 1, giúp cải thiện tính toán độ tương đồng cosine.
+
+4. Tìm kiếm tài liệu tương đồng
+- Mô tả:Chọn bất kỳ tài liệu nào từ tập dữ liệu đã xử lý. Tính toán độ tương đồng cosine giữa vector của tài liệu đó và tất cả các tài liệu khác. In ra 5 tài liệu có độ tương đồng cao nhất.
+- Thực hiện:
+Tài liệu truy vấn được chọn là tài liệu có id = 0 (sau khi thêm cột id bằng monotonically_increasing_id()).
+Một UDF được định nghĩa để tính độ tương đồng cosine dựa trên tích vô hướng của các vector đã chuẩn hóa.
+Kết quả được sắp xếp theo thứ tự giảm dần của độ tương đồng và in ra 5 tài liệu tương đồng nhất.
+
+
+- Kết quả:
+![Query Document](image/query_doc.png)
+![Result Documents](image/result_docs.png)
+
+
+### Kết luận
+Các cập nhật đã được tích hợp thành công vào mã nguồn Lab17_NLPPipeline.scala, cho phép tùy chỉnh số lượng tài liệu, đo lường hiệu suất chi tiết, chuẩn hóa vector, và tìm kiếm tài liệu tương đồng một cách hiệu quả. Hình ảnh minh họa cho thấy quá trình chọn tài liệu truy vấn và danh sách 5 tài liệu tương đồng nhất, với độ tương đồng cosine được tính toán chính xác.
+
+---
