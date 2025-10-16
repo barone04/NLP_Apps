@@ -94,8 +94,8 @@ python test/lab4_embedding_visualization.py
 ### b. Phân tích biểu đồ trực quan hóa
 
 - Kết quả:
-![Query Document](image/PCA_visual.png)
-![Result Documents](image/TSNE_visual.png)
+![Query Document](../image/PCA_visual.png)
+![Result Documents](../image/TSNE_visual.png)
 
 Khi giảm chiều xuống 2D bằng **PCA** hoặc **t-SNE**:
 
