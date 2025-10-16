@@ -75,9 +75,9 @@ python test/lab4_embedding_visualization.py
 ## 🔹 3. Phân tích kết quả
 
 - Kết quả:
-![Query Document](image/Result_task1,2.png)
-![Result Documents](image/Result_task3.png)
-![Result Documents](image/Result_task4.png)
+![Query Document](../image/Result_task1_2.png)
+![Result Documents](../image/Result_task3.png)
+![Result Documents](../image/Result_task4.png)
 
 ### a. Độ tương đồng và từ đồng nghĩa tìm được
 
