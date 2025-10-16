@@ -1,0 +1,9 @@
+# Thư mục dữ liệu và cấu hình riêng
+data/
+.cadence/
+
+# File Python sinh tự động
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
